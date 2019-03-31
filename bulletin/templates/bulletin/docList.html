@@ -1,11 +1,16 @@
 {# @TODO include 해야하는 틀 만들기 #}
 <div class="board-container">
+    <div class="board-header">
+        <div class="board-col">TITLE</div>
+        <div class="board-col">AUTHOR</div>
+        <div class="board-col">DATE</div>
+    </div>
     {% for doc in list %}
         <a href="{% url 'document' doc.id %}">
             <div class="board-row">
-                <div class="board-col">doc.title</div>
-                <div class="board-col">doc.author</div>
-                <div class="board-col">doc.updated_at</div>
+                <div class="board-col">{{ doc.title }}</div>
+                <div class="board-col">{{ doc.author }}</div>
+                <div class="board-col">{{ doc.updated_at }}</div>
             </div>
         </a>
     {% endfor %}
@@ -28,7 +33,8 @@
         {% endif %}
     </span>
 </div>
-</div>
+
+<a href="{% url "" %}" class="write">글쓰기</a>
 
 <style>
     .board-container {
@@ -38,7 +44,17 @@
     .board-col {
         display: inline-block;
     }
-    .board-row {
+    .board-container .board-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         border-bottom: solid 1px gray;
+        height: 35px;
+    }
+
+    .board-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 2px black;
     }
 </style>
