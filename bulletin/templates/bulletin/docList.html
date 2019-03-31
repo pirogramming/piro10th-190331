@@ -1,0 +1,60 @@
+{# @TODO include 해야하는 틀 만들기 #}
+<div class="board-container">
+    <div class="board-header">
+        <div class="board-col">TITLE</div>
+        <div class="board-col">AUTHOR</div>
+        <div class="board-col">DATE</div>
+    </div>
+    {% for doc in list %}
+        <a href="{% url 'document' doc.id %}">
+            <div class="board-row">
+                <div class="board-col">{{ doc.title }}</div>
+                <div class="board-col">{{ doc.author }}</div>
+                <div class="board-col">{{ doc.updated_at }}</div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if list.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ list.number }} of {{ list.paginator.num_pages }}.
+        </span>
+
+        {% if list.has_next %}
+            <a href="?page={{ list.next_page_number }}">next</a>
+            <a href="?page={{ list.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+<a href="{% url "" %}" class="write">글쓰기</a>
+
+<style>
+    .board-container {
+        width:90%;
+        height:50%;
+    }
+    .board-col {
+        display: inline-block;
+    }
+    .board-container .board-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px gray;
+        height: 35px;
+    }
+
+    .board-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: solid 2px black;
+    }
+</style>
