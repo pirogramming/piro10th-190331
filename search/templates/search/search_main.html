@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>HELLO SEARCH</h1>
+    <form action="{% url 'search:search' %}?next={{ request.path }}" method="get">
+
+        <select data-trigger="" name="choices">
+            <option placeholder="">Option</option>
+            <option>Title</option>
+            <option>Content</option>
+            <option>User</option>
+        </select>
+        <input id="search" type="text" placeholder="Enter Keywords?" name="q" value="{{ q }}" autofocus/>
+        <button type="submit"></button>
+    </form>
+</body>
+</html>

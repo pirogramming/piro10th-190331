@@ -19,8 +19,15 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('search/', include(('search.urls', 'search'), namespace='search')),
+=======
+<<<<<<< HEAD
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
 ] + [
     path('board/', include("bulletin.urls"))
+>>>>>>> origin/accounts
 ]
 =======
 

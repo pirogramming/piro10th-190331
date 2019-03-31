@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> TEST</h1>
+    <h2>{{ q }}..에 대한 검색결과 {{ result|length }}건</h2>
+
+    <ul>
+    {% for each_post in result %}
+        <li>{{ each_post }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
