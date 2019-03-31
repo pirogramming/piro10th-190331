@@ -1,0 +1,28 @@
+{# @TODO 공통된 레이아웃 적용 #}
+
+<div class="document-container">
+    <div class="doc-row title">{{ doc.title }}</div>
+    <div class="doc-row content">{{ doc.content }}</div>
+    <div class="doc-row footer">
+        <span class="doc__author">{{ doc.author }}</span>
+        <span class="doc__date">{{ doc.update_at }}</span>
+    </div>
+    <div class="doc-row comments">
+        {% for comment in doc.comment_set.all %}
+            <div class="comment-row">
+                <div class="comment-col content">
+                    {{ comment.text }}
+                </div>
+                <div class="comment-col info">
+                    <span class="comment__author">
+                        {{ comment.author }}
+                    </span>
+                    <span class="comment__date">
+                        {{ comment.updated_at }}
+                    </span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>

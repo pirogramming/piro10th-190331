@@ -15,6 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+<<<<<<< HEAD
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+] + [
+    path('board/', include("bulletin.urls"))
+]
+=======
 
 
 
@@ -22,3 +30,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls', namespace='accounts'))
 ]
+>>>>>>> origin/accounts
