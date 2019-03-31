@@ -37,7 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
     'search',
+=======
+<<<<<<< HEAD
+] + [
+    'bulletin',
+=======
+    'accounts',
+>>>>>>> origin/accounts
+>>>>>>> origin/accounts
 ]
 
 MIDDLEWARE = [
